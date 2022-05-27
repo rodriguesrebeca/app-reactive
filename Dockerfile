@@ -1,3 +1,3 @@
 FROM openjdk:11
-COPY /target/app-reactive-0.0.1-SNAPSHOT.jar app.jar
+COPY target/app-reactive.jar app.jar
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "/app.jar"]
