@@ -1,0 +1,33 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/patients
+
+  application:
+    name: Observability api
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+  endpoint:
+    metrics:
+      enabled: false
+    prometheus:
+      enabled: true
+
+  management:
+    metrics:
+      tags:
+        application=${spring:application:name}
+
